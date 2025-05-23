@@ -55,8 +55,6 @@ A modern, fullstack multi-page form application built with a clean and minimalis
 ![App Screenshot](/ss/s4.png)
 ![App Screenshot](/ss/s5.png)
 ![App Screenshot](/ss/s6.png)
-![App Screenshot](/ss/s7.png)
-![App Screenshot](/ss/s8.png)
 
 
 
