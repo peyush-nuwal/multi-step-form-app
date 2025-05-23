@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #111111;
+  --color-primary: #483eff;
+}
+html,
+body {
+  font-family: "Inter", sans-serif;
+  height: 100%;
+ width: 100%;
+}
+
+@layer {
+  .btn {
+    @apply px-5 py-2 rounded-lg transition-all duration-300 ease-in-out cursor-pointer hover:scale-105;
+  }
+  .primary {
+    @apply bg-primary text-white hover:text-white/90 hover:bg-primary/90;
+  }
+  .secondary {
+    @apply bg-transparent text-primary border border-primary hover:bg-primary hover:text-white;
+  }
+}
+
+.hover-effect {
+  position: relative;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.hover-effect:after {
+  content: " ";
+  background: #483eff;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform-origin: left;
+  transition: all ease-in-out 0.3s;
+}
+
+.hover-effect:hover::after {
+  width: 100%;
+}
+
+.selected-option:after {
+  content: " ";
+  background: #483eff;
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform-origin: left;
+  transition: all ease-in-out 0.3s;
+}
+
+/* ✅ Base valid style for email, password, zipcode */
+input.input-ui[type="email"]:valid:not(:placeholder-shown),
+input.input-ui[type="password"]:valid:not(:placeholder-shown),
+input.input-ui[name="zipcode"]:valid:not(:placeholder-shown) {
+  border-color: #5bb05e;
+}
+
+/* ✅ Base invalid style */
+input.input-ui[type="email"]:invalid:not(:placeholder-shown),
+input.input-ui[type="password"]:invalid:not(:placeholder-shown),
+input.input-ui[name="zipcode"]:invalid:not(:placeholder-shown) {
+  border-color: #f44957;
+}
+
+/* ✅ Show label only when user has typed something and it's valid */
+input.input-ui[type="email"]:valid:not(:placeholder-shown) ~ label::before,
+input.input-ui[type="password"]:valid:not(:placeholder-shown) ~ label::before,
+input.input-ui[name="zipcode"]:valid:not(:placeholder-shown) ~ label::before {
+  content: attr(data-valid);
+  color: #5bb05e;
+}
+
+/* ✅ Show label only when user has typed something and it's invalid */
+input.input-ui[type="email"]:invalid:not(:placeholder-shown) ~ label::before,
+input.input-ui[type="password"]:invalid:not(:placeholder-shown) ~ label::before,
+input.input-ui[name="Zipcode"]:invalid:not(:placeholder-shown) ~ label::before {
+  content: attr(data-invalid);
+  color: #f44957;
+}
+
+/* ✅ Hide label completely if input is empty */
+input.input-ui[type="email"]:placeholder-shown ~ label::before,
+input.input-ui[type="password"]:placeholder-shown ~ label::before,
+input.input-ui[name="zipcode"]:placeholder-shown ~ label::before {
+  content: "";
+}
+
+
