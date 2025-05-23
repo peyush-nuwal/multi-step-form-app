@@ -1,5 +1,5 @@
 
-# react-muliti-page-form app
+# react-muliti-page-form App
 
 
 A modern, fullstack multi-page form application built with a clean and minimalistic design approach. This project is designed to collect and process user data across multiple steps/pages with robust validation, secure authentication, and seamless frontend-backend communication.
